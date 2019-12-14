@@ -1,26 +1,24 @@
 {
-    "name": "ajax-view",
-    "version": "0.0.0",
-    "description": "A sample Node.js app for see Ajax",
-    "engines": {
-      "node": "12.x"
-    },
-    "main": "index.js",
-    "scripts": {
-      "start": "node index.js"
-    },
-    "dependencies": {
-      "express": "^4.15.2"
-    },
-    "devDependencies": {
-      "request": "^2.81.0"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git@github.com:alcalcides/ajax-view.git"
-    },
-    "keywords": [
-      "node",
-      "heroku"
-    ]
-  }
+  "name": "ajax-view",
+  "description": "A sample Node.js app for see Ajax",
+  "version": "0.0.1",
+  "license": "Apache License Version 2.0",
+  "author": {
+    "name": "Alcides Augusto Bezerra Neto",
+    "email": "alcalcides@hotmail.com"
+  },
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/alcalcides/ajax-view.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "ajax"
+  ]
+}
