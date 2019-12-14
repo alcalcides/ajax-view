@@ -1,5 +1,5 @@
 #npm init
-#npm install
+npm install
 #node index.js 
 #npm start
 #npm install --dev <xxx>
@@ -10,7 +10,6 @@
 #git diff index.js
 #git remote -v
 git add .
-git status
-git commit -m "Calls main function from main.js file"
+git commit -m "enables html tags"
 git push github master
 git push heroku master
