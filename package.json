@@ -1,7 +1,7 @@
 {
   "name": "ajax-view",
   "description": "A simple NodeJS App in order to deep dive into Ajax with open eyes",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "Apache License Version 2.0",
   "author": {
     "name": "Alcides Augusto Bezerra Neto",
