@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax-View</title>
+    <script>
+        // Model
+        function setStartingNote(startingMessage) {
+            document.querySelector("span#starting").innerText = startingMessage
+        }
+        function setEndingNote(endingMessage) {
+            document.querySelector("span#ending").innerText = endingMessage
+        }
+        function setPerioNote(periodMessage) {
+            document.querySelector("span#period").innerText = periodMessage
+        }
+        function asyncAjaxExperience() {
+            var xhr = new XMLHttpRequest()
+            var starting = new Date().getTime()
+            var startingMessage = "Starting at " + starting + " ms"
+            console.log(startingMessage)
+            setStartingNote(startingMessage)
+            xhr.open("GET", "https://viacep.com.br/ws/50791251/json/", true)
+
+            xhr.onreadystatechange = function () {
+                console.log("readyState = " + this.readyState + ", status = " + this.status)
+                if (this.readyState == 4 && this.status == 200) {
+                    var result = this.responseText
+                    console.log(result)
+                    var ending = new Date().getTime()
+                    var endingMessage = "Finishing at " + ending + " ms"
+                    console.log(endingMessage)
+                    setEndingNote(endingMessage)
+                    var period = ending - starting
+                    var periodMessage = "Full time: " + period + " ms"
+                    console.log(periodMessage)
+                    setPerioNote(periodMessage)
+                }
+            }
+
+            xhr.send()
+        }
+        function syncAjaxExperience() {
+            var xhr = new XMLHttpRequest()
+            var starting = new Date().getTime()
+            var startingMessage = "Starting at " + starting + " ms"
+            console.log(startingMessage)
+            setStartingNote(startingMessage)
+            xhr.open("GET", "https://viacep.com.br/ws/41620770/json/", false)
+            xhr.send()
+
+            console.log(xhr.responseText)
+            var ending = new Date().getTime()
+            var endingMessage = "Finishing at " + ending + " ms"
+            console.log(endingMessage)
+            setEndingNote(endingMessage)
+
+            var period = ending - starting
+            var periodMessage = "Full time: " + period + " ms"
+            console.log(periodMessage)
+            setPerioNote(periodMessage)
+        }
+        //Controller
+        function run(typeOfRequest) {
+            window[typeOfRequest + "AjaxExperience"]()
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Ajax-View</h1>
+    <div>
+        <button type="radio" name="ajaxMethod" value="async" id="asy" onclick=run(this.value)>Assynchronous</button>
+        <button type="radio" name="ajaxMethod" value="sync" id="ssy" onclick=run(this.value)>Synchronous</button>
+    </div>
+    <section id="feedback">
+        <p>Now is: <span class="time" id="starting"></span></p>
+        <p>Now is: <span class="time" id="ending"></span></p>
+        <p>Now is: <span class="time" id="period"></span></p>
+    </section>
+</body>
+
+</html>

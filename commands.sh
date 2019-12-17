@@ -10,6 +10,6 @@ heroku login -i
 #git diff index.js
 #git remote -v
 git add .
-git commit -m "Refactors HTML code out of main script"
+git commit -m "HTML application prototype"
 git push github master
 git push heroku master
