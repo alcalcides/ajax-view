@@ -1,7 +1,7 @@
 {
   "name": "ajax-view",
-  "description": "A sample Node.js app for see Ajax",
-  "version": "0.1.0",
+  "description": "A simple NodeJS App in order to deep dive into Ajax with open eyes",
+  "version": "0.2.0",
   "license": "Apache License Version 2.0",
   "author": {
     "name": "Alcides Augusto Bezerra Neto",
@@ -10,7 +10,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
     "node",
     "heroku",
     "ajax"
-  ]
+  ],
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }
