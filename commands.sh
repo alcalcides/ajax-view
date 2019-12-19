@@ -11,6 +11,9 @@
 #git diff index.js
 #git remote -v
 git add .
-git commit -m "Prepares netlify environment"
+git commit -m "Implements MVC architecture"
 git push github prototypeHTML
 #git push heroku master
+#netlify deploy
+#netlify open
+#netlify logout
